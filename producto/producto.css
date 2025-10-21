@@ -1,0 +1,237 @@
+html, body {
+    height: 100%;
+}
+body, * {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding-top: 2%;
+    display: flex;
+}
+
+div.barra_imagenes {
+    flex: 1 1 4%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+div.barra_imagenes img {
+    width: 80%;
+    margin-top: 30%;
+    border: 2px solid gray;
+    border-radius: 20%;
+    aspect-ratio: 1 / 1;
+    object-fit: fill;
+}
+div.imagen_principal{
+    flex: 1 1 50%;
+    position: relative;
+}
+div.imagen_principal img{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+div.imagen_principal i {
+    position: absolute;
+    top: 1.5%;
+    right: 2.5%;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 2%;
+    border-radius: 100%;
+}
+div.contenido{
+    flex: 1 1 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 10px;
+}
+div.contenido div.titulo{flex: 1 1 20%;}
+div.contenido div.vendedor{flex: 1 1 2%;}
+div.contenido div.valoracion {flex: 1 1 5%;}
+div.contenido div.oferta {flex: 1 1 2%;}
+div.contenido div.precios {flex: 1 1 5%;}
+div.contenido div.descricion {flex: 1 1 20%;}
+div.contenido div.titulo-productos-similares {flex: 1 1 1%;}
+div.contenido div.productos-similares {flex: 1 1 30%;}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    padding: 5px;
+}
+.vendedor{
+    padding: 5px;
+    font-size: 1em;
+    align-self: flex-start;
+}
+.valoracion {
+    padding: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 2px;
+}
+.caja-estrellas{
+    display: inline-block;
+    position: relative;
+    aspect-ratio: 16 / 3;
+    width: 140px;
+    border: 1px solid white;
+}
+.caja-estrellas img {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+.caja-estrellas div {
+    position: absolute;
+    z-index: -1;
+    width: 86.7%;
+    height: 100%;
+    background-color: rgb(255, 196, 0);
+    color: rgb(255, 196, 0);
+    border: 1px solid white;
+}
+.separacion {
+    width: 100%;
+}
+.oferta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: white;
+    font-weight: bolder;
+    background-color: rgb(218, 57, 57);
+    border-radius: 10% / 30%;
+    padding: 5px;
+    margin: 5px;
+    align-self: flex-start;
+}
+.precios {
+    display: flex;
+    padding: 5px;
+    font-size: 2em;
+    align-self: flex-start;
+}
+.precio-actual{
+    color: black;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.descuento{
+    color: rgb(219, 73, 73);
+}
+.descricion {
+    padding: 10px;
+}
+.titulo-productos-similares{
+    padding: 10px;
+    align-self: flex-start;
+    color: gray;
+    font-size: 0.9rem;
+}
+.titulo-productos-similares span {
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.productos-similares {
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    padding: 5px;
+}
+.producto-similar{
+    flex: 1 1 20%;
+    min-width: 120px;
+    max-width: 140px;
+    margin: 5px;
+    border: 2px solid gray;
+    border-radius: 10%/10%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.producto-similar:hover{
+    border: 4px solid rgb(0, 110, 255);
+}
+.productos-similares img{
+    width: 100%;
+    margin-bottom: 10px;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    border-bottom: 3px solid gray;
+    aspect-ratio: 1 / 1;
+    object-fit: fill;
+}
+.precio-producto {
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+    font-size: 1em;
+}
+.precio-producto-antiguo {
+    color: gray;
+    margin: 5px;
+    font-size: 0.8em;
+    text-decoration: line-through;
+}
+
+@media (max-width:800px) {
+    body{flex-direction: column;}
+    div.barra_imagenes{
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin: 5px;
+    }
+    div.barra_imagenes img {
+        max-width: 10%;
+        height: auto;
+        margin-top: 0px;
+        border: 2px solid gray;
+        border-radius: 20%;
+    }
+    .titulo{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:300px) {
+    body{flex-direction: column;}
+    div.barra_imagenes{
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin: 5px;
+    }
+    div.barra_imagenes img {
+        max-width: 10%;
+        height: auto;
+        margin-top: 0px;
+        border: 2px solid gray;
+        border-radius: 20%;
+    }
+    .productos-similares{
+        align-items: center;
+        justify-content: center;
+    }
+    .titulo{
+        font-size: 1.3rem;
+    }
+    div.imagen_principal i {
+        font-size: 0.8rem;
+    }
+}

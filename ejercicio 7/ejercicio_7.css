@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #c5e17a;
+    padding: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Contenedor con Flexbox con NAV y MAIN en su interior */
+.contenedor {
+    display: flex;
+    /*
+    border: 5px solid black;
+    padding: 20px;
+    */
+}
+
+
+nav {
+    background: #f4a6c1; 
+    flex: 1 1 200px;
+    /*      1 |Cuánto crece si sobra espacio.*/
+    /*      1 |Cuánto se encoge si falta espacio.*/
+    /*  200px |Tamaño inicial del elemento antes de crecer o encoger.*/
+    padding: 20px;
+}
+
+
+main {
+    background: #fde9b3;
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 500px;
+    /*      3 |Cuánto crece si sobra espacio.*/
+    /*      1 |Cuánto se encoge si falta espacio.*/
+    /*  500px |Tamaño inicial del elemento antes de crecer o encoger.*/
+    padding: 20px;
+}
+
+article {
+    background: #7dd9f5; 
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+footer {
+    background: #b3b3e6;
+    text-align: center;
+    padding: 15px;
+    margin-top: 0px;
+}
+
+
+@media (max-width: 600px) {
+    .contenedor {
+        flex-direction: column;
+        /*
+        Por defecto los elementos se organizan en fila
+        Asi los elementos se colocan en columna, uno debajo del otro
+        */
+    }
+    nav, main {
+        /* 
+        width: 100%;
+        Como ahora no estan en linea, deben ocupar el 100% del ancho de la pagina
+        */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #f1f1f1;
+    }
+    header {
+        background: #2e7d32; 
+        color: white;
+    }
+    nav {
+        background: #8e24aa; 
+    }
+    main {
+        background: #333333; 
+    }
+    article {
+        background: #1976d2; 
+        color: #f1f1f1;
+    }
+    footer {
+        background: #1e88e5;
+        color: white;
+    }
+    a {
+        color: #ffeb3b;
+    }
+   
+}

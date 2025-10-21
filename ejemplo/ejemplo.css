@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;          /* permite que los items bajen de línea */
+  gap: 10px;                /* espacio entre ellos */
+}
+
+.item {
+  flex: 1;                  /* se reparten el espacio */
+  min-width: 200px;         /* no bajan de este ancho */
+  max-width: 400px;         /* tampoco crecen más de esto */
+  background: lightblue;
+  padding: 20px;
+  text-align: center;
+}

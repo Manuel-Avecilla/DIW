@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    box-sizing: border-box;
+}
+
+div.oferta {
+    position: relative;
+    border: 1px solid black;
+    margin: 10px;
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+div{
+    border: 1px solid black;
+}
+
+div.precio{
+    background-color: orange;
+    color: #f4f4f4;
+    font-size: 1.4rem;
+    text-align: center;
+    display: inline-block;
+    font-weight: bolder;
+
+    border-radius: 100%;
+    margin: 10px;
+    width: 20%;
+    aspect-ratio: 1 / 1; 
+    position: relative;
+}
+div.precio span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+div.titulo{
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+div.caracteristica span{
+    position: absolute;
+    width: 70%;
+    left: 0;
+}
+div.caracteristicas i {
+    position: absolute;
+    right: 0;
+}

@@ -1,0 +1,50 @@
+header {
+    background-color: rgb(101, 255, 101);
+    padding: 15px;
+    margin: 1%;
+    background-image:url("https://picsum.photos/seed/picsum/1400/1500");
+    border: 1px solid black; 
+}
+
+nav{
+    background-color: pink;
+    display: inline-block;
+    vertical-align: top;
+
+    padding: 1.5%;
+    margin: 1%;
+    width: 44%;
+    
+    border: 1px solid black;
+}
+
+#contenedor{
+    display: block;
+    width: 100%;
+}
+
+main{
+    background-color: rgb(248, 248, 151);
+    display: inline-block;
+    vertical-align: top;
+
+    padding: 1.5%;
+    margin: 1%;
+    width: 44%;
+    border: 1px solid black;
+}
+
+article{
+    background-color: rgb(165, 165, 255);    
+    padding: 1.5%;
+    margin-top: 1%;
+    border: 1px solid black;
+}
+
+footer{
+    
+    background-color: #ffa6ff;
+    padding: 15px;
+    margin: 1%;
+    border: 1px solid black;
+}

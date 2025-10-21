@@ -1,0 +1,66 @@
+div.producto {
+    position: relative;
+    border: 1px solid black;
+    margin: 10px;
+    width: 30%;
+    display: inline-block;
+}
+
+img.imagen-producto{
+    margin: 0px;
+    width: 100%;
+}
+
+div.descuento {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 25%;
+    position: absolute;
+    padding: 5px;
+    top: 5px;
+    left: 5px;
+}
+
+div.promocion {
+    color: orange;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 15%;
+    margin-left: 5px;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+p.descripcion {
+    padding: 8px;
+
+}
+
+div.precio {
+    font-size: 35px;
+    font-weight: 900;
+    color: red;
+    display: inline;
+    margin: 5px;
+    margin-right: 10px;
+}
+
+div.precio-antiguo {
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+    display: inline-block;
+    text-decoration: line-through;
+}
+
+div.estrellas {
+    margin: 5px;
+    color: rgb(214, 157, 0);
+    font-size: 16px;
+    font-weight: 900;
+}
+

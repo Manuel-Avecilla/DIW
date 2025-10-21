@@ -1,0 +1,204 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background: #ffeb3b;
+    padding: 20px;
+}
+header i {
+    margin: 0 10px;
+    font-size: 1.3em;
+}
+div.titulo{
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+div.menu{
+    background-color: white;
+    border: 1px solid black;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+div.menu a{
+    margin: 10px;
+    color: black;
+    border: 1px solid black;
+    padding: 7px 12px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+div.menu a:hover{
+    color: white;
+    background-color: #333333;
+    border: 2px solid white;
+}
+
+/* ---------- SECCIÓN PRINCIPAL ---------- */
+div.seccion-principal{
+    border: 2px solid black;
+    text-align: center;
+    font-size: 0.9em;
+    background: white;
+    margin: 10px;
+}
+div.imagen-presentacion img{
+    width: 100%;
+    display: block;
+}
+div.presentacion {
+    padding: 15px;
+}
+
+/* ---------- SECCIÓN SECUNDARIA ---------- */
+div.seccion-secundaria {
+    background-color: #ffeb3b;
+    text-align: center;
+    padding: 10px 0;
+}
+nav, main {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 0;
+}
+nav {
+    background-color: #f4f4f4;
+    padding: 20px;
+    font-size: 1.2em;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+main {
+    padding: 20px;
+}
+main button{
+    color: black;
+    border: 2px solid black;
+    border-radius: 15%;
+    background-color: #ffeb3b;
+    font-size: 1.2em;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+main button:hover {
+    color: white;
+    background-color: #333333;
+    border: 2px solid white;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    background: white;
+}
+footer a {
+    font-size: 2em;
+    margin: 10px;
+    color: black;
+    padding: 7px;
+    text-decoration: none;
+}
+
+footer i {
+    transition: all 0.4s ease; 
+}
+footer i:hover {
+    font-size: 1.7em;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    nav, main {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+    }
+    nav {
+        font-size: 1em;
+        padding: 10px;
+        border-bottom: 2px solid black;
+        border-left: none;
+        border-right: none;
+    }
+    div.titulo{
+        font-size: 1.3em;
+    }
+    main button {
+        margin: 20px 0;
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+}
+
+/* ---------- DARK MODE ---------- */
+@media (prefers-color-scheme: dark) {
+    
+    body {
+        background: #121212;
+        color: #f1f1f1;
+    }
+    header {
+        background: #000000; 
+        color: #ffeb3b;
+    }
+    div.menu {
+        background-color: #333333;
+        display: block;
+    }
+    div.menu a {
+        color: #ffeb3b;
+        border: 2px solid #ffeb3b;
+        
+    }
+    div.menu a:hover {
+        color: black;
+        background-color: #ffeb3b;
+        border: 2px solid white;
+    }
+    div.seccion-principal{
+        background-color: #333333;
+        color: #ffeb3b;
+    }
+    div.seccion-secundaria {
+        background: #333333; 
+    }
+    nav {
+        background:#000000;
+        border: 2px solid #ffeb3b;
+        color: #ffeb3b;
+    }
+    main button {
+        background-color: #000000;
+        border: 2px solid #ffeb3b;
+        color: #ffeb3b;
+    }
+    main button:hover {
+        color: black;
+        background-color: #ffeb3b;
+        border: 2px solid white;
+    }
+    footer {
+        background: #000000;
+    }
+    i {
+        color: #ffeb3b;
+    }
+    
+}
