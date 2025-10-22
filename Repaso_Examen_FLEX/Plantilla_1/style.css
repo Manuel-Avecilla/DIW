@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.A, .B, .C, .D, .E, .F {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    margin: 0.3rem;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.A {
+    flex: 1 1 20%;
+    background-color: yellow;
+}
+
+.seccion-principal {
+    flex: 1 1 80%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.seccion-1 {
+    flex: 1 1 70%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.F {
+    flex: 1 1 30%;
+    background-color: pink;
+}
+
+.B {
+    flex: 1 1 50%;
+    background-color: green;
+}
+
+.seccion-2 {
+    flex: 1 1 50%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.C , .D , .E {
+    flex: 1 1 33%;
+}
+.C {background-color: blue;}
+.D {background-color: palevioletred;}
+.E {background-color: orange;}
+
+
+@media (max-width:700px) {
+    .seccion-principal {
+        flex-flow: column nowrap;
+    }
+}
