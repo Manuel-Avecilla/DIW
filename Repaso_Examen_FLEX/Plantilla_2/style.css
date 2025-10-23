@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-color: blue;
+}
+.oferta-1, .oferta-2, .oferta-3 {
+    background-color: white;
+    height: 60%;
+    flex: 0 0 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.area-precio {
+    padding: 2rem;
+    background-color: orange;
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    box-shadow: 0px 0px 0px 3px orange;
+}
+.area-tipo {
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+hr {
+    width: 100%;
+    z-index: 0;
+}
+.area-tipo div {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    padding: 0.6rem;
+    font-size: 1.4rem;
+}
+
+.fa-check {
+    color: green;
+}
+.fa-xmark {
+    color: red;
+}
