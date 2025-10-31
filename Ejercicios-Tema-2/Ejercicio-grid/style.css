@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+}
+ * {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: 6px;
+
+    grid-template-areas:
+    'header header header header header header header header'
+    'nav nav main main main aside aside aside'
+    'nav nav main main main aside aside aside'
+    'nav nav main main main aside aside aside'
+    'nav nav main main main aside aside aside'
+    'nav nav main main main aside aside aside'
+    'nav nav main main main aside aside aside'
+    'footer footer footer footer footer footer footer footer'
+    ;
+}
+
+body * {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    padding: 1rem;
+}
+
+header {
+    background-color: #61defc;
+    grid-area: header;
+}
+
+nav {
+    background-color: #499dff;
+    grid-area: nav;
+}
+
+main{
+    background-color: #c0a3ff;
+    grid-area: main;
+}
+
+aside{
+    background-color: #cd5af7;
+    grid-area: aside;
+}
+
+footer{
+    background-color: #ff7965;
+    grid-area: footer;
+}
+
+@media (max-width:900px) {
+    body {
+        grid-template-areas:
+        'header header header header header header header header'
+        'nav nav main main main main main main'
+        'nav nav main main main main main main'
+        'nav nav main main main main main main'
+        'nav nav aside aside aside aside aside aside'
+        'nav nav aside aside aside aside aside aside'
+        'nav nav aside aside aside aside aside aside'
+        'footer footer footer footer footer footer footer footer'
+        ;
+    }
+}
+@media (max-width:500px) {
+    body {
+        grid-template-areas:
+        'header header header header header header header header'
+        'nav nav nav nav nav nav nav nav'
+        'main main main main main main main main'
+        'main main main main main main main main'
+        'aside aside aside aside aside aside aside aside'
+        'aside aside aside aside aside aside aside aside'
+        'aside aside aside aside aside aside aside aside'
+        'footer footer footer footer footer footer footer footer'
+        ;
+    }
+}
