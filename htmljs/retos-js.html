@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini-retos DOM</title>
+  <style>
+    body { font-family: Arial; padding: 20px; line-height: 1.4; }
+    section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+    h2 { margin-top: 0; }
+    code { background: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<h1>Mini-retos DOM</h1>
+<p>Rellena únicamente el código dentro de <code>&lt;script&gt;</code> en cada ejercicio.</p>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 1 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 1 – Obtener el valor de un input</h2>
+  <input id="nombre1" type="text" placeholder="Escribe tu nombre">
+  <button id="btn1">Mostrar</button>
+
+  <script>
+    // Mini-reto 1
+    // Al pulsar el botón, muestra en consola el valor del input.
+    // TU CÓDIGO AQUÍ
+    const boton = document.querySelector('#btn1')
+
+    boton.addEventListener('click', () => {
+      const input = document.querySelector('#nombre1')
+      console.log(input.value);
+    });
+
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 2 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 2 – Leer el texto de un div</h2>
+  <div id="mensaje2">Hola DAW</div>
+  <button id="btn2">Leer texto</button>
+
+  <script>
+    // Mini-reto 2
+    // Al pulsar el botón, mostrar el texto del div.
+    // TU CÓDIGO AQUÍ
+    const boton2 = document.querySelector('#btn2')
+
+    boton2.addEventListener('click', () => {
+      const texto = document.querySelector('#mensaje2').textContent
+      console.log(texto);
+    });
+
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 3 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 3 – Cambiar el texto de un div</h2>
+  <div id="mensaje3">Texto original</div>
+  <button id="btn3">Cambiar</button>
+
+  <script>
+    // Mini-reto 3
+    // Cambia el texto del div por "Cambiado".
+    // TU CÓDIGO AQUÍ
+    const boton3 = document.querySelector('#btn3')
+
+    boton3.addEventListener('click', () => {
+      const div = document.querySelector('#mensaje3')
+      if (div.textContent == 'Cambiado') {
+        div.textContent = 'hola'
+      } else {
+        div.textContent = 'Cambiado'
+      }
+    });
+
+  </script>
+</section>
+
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 4 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 4 – Obtener todos los inputs</h2>
+  <input type="text" placeholder="A">
+  <input type="text" placeholder="B">
+  <input type="text" placeholder="C">
+  <button id="btn4">Ver valores</button>
+
+  <script>
+    // Mini-reto 4
+    // Seleccionar todos los inputs y mostrar sus valores.
+    // TU CÓDIGO AQUÍ
+    const boton4 = document.querySelector('#btn4')
+
+    boton4.addEventListener('click', () => {
+      const inputs = document.querySelectorAll('input[type="text"]')
+      //[input1, input2, input3]
+
+      inputs.forEach(input => {
+        console.log(input.value);
+      });
+
+    });
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 5 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 5 – Listar todos los párrafos</h2>
+  <p>Uno</p>
+  <p>Dos</p>
+  <p>Tres</p>
+  <button id="btn5">Listar</button>
+
+  <script>
+    // Mini-reto 5
+    // Seleccionar todos los <p> y mostrar su texto.
+    // TU CÓDIGO AQUÍ
+    const boton5 = document.querySelector('#btn5')
+
+    boton5.addEventListener('click', () => {
+      const parrafos = document.querySelectorAll('p')
+      //[p1, p2, p3]
+
+      parrafos.forEach(p => {
+        console.log(p.textContent);
+      });
+
+    });
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 6 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 6 – Opción seleccionada del select</h2>
+  <select id="curso6">
+    <option value="DAW">DAW</option>
+    <option value="DAM">DAM</option>
+    <option value="ASIR">ASIR</option>
+  </select>
+  <button id="btn6">Elegido</button>
+
+  <script>
+    // Mini-reto 6
+    // Mostrar el value del option seleccionado.
+    // TU CÓDIGO AQUÍ
+    const boton6 = document.querySelector('#btn6')
+
+    boton6.addEventListener('click', () => {
+      const select = document.querySelector('#curso6')
+      console.log(select.value);
+    });
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 7 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 7 – Checkboxes marcadas</h2>
+  <label><input type="checkbox" value="HTML"> HTML</label>
+  <label><input type="checkbox" value="CSS"> CSS</label>
+  <label><input type="checkbox" value="JS"> JS</label>
+  <button id="btn7">Ver selección</button>
+
+  <script>
+    // Mini-reto 7
+    // Mostrar qué checkboxes están marcadas.
+    // TU CÓDIGO AQUÍ
+    const boton7 = document.querySelector('#btn7')
+
+    boton7.addEventListener('click', () => {
+      inputs = document.querySelectorAll('label input')
+
+      inputs.forEach(input => {
+        if (input.checked) {
+          console.log(input.value);
+        }
+      });
+
+    });
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 8 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 8 – Radio seleccionado</h2>
+  <label><input type="radio" name="nivel8" value="Básico"> Básico</label>
+  <label><input type="radio" name="nivel8" value="Intermedio"> Intermedio</label>
+  <label><input type="radio" name="nivel8" value="Avanzado"> Avanzado</label>
+  <button id="btn8">Nivel elegido</button>
+
+  <script>
+    // Mini-reto 8
+    // Detectar qué radio está seleccionado.
+    // TU CÓDIGO AQUÍ
+    const boton8 = document.querySelector('#btn8')
+
+    boton8.addEventListener('click', () => {
+      const inputs = document.querySelectorAll('input[name="nivel8"]')
+
+      inputs.forEach(input => {
+        if (input.checked) {
+          console.log(input.value);
+        }
+      });
+
+    });
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 9 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 9 – Crear un objeto con los valores del formulario</h2>
+  <form id="registro9">
+    <input name="nombre" placeholder="Nombre">
+    <input name="apellidos" placeholder="Apellidos">
+    <input name="edad" type="number" placeholder="Edad">
+    <button type="button" id="btn9">Enviar</button>
+  </form>
+
+
+  <script>
+    // Mini-reto 9
+    // Crear un objeto con {name: value} de todos los inputs.
+    // TU CÓDIGO AQUÍ
+    const boton9 = document.querySelector('#btn9')
+
+    boton9.addEventListener('click', () => {
+      const inputs = document.querySelectorAll('#registro9 input')
+      //[i,i,i]
+      const map = new Map()
+
+      inputs.forEach(input => {
+        map.set(input.name, input.value)
+      });
+
+      const objeto = Object.fromEntries(map)
+
+      console.log(objeto);
+
+    })
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 10 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 10 – Validar inputs vacíos</h2>
+  <form id="registro10">
+    <input placeholder="Campo 1">
+    <input placeholder="Campo 2">
+    <input placeholder="Campo 3">
+    <button type="button" id="btn10">Validar</button>
+  </form>
+
+  <script>
+    // Mini-reto 10
+    // Pintar en rojo los inputs vacíos. Alert si todos OK.
+    // TU CÓDIGO AQUÍ
+    const boton10 = document.querySelector('#btn10')
+
+    boton10.addEventListener('click', () => {
+      const inputs = document.querySelectorAll('#registro10 input')
+
+      let todoOK = true;
+
+      inputs.forEach(i => {
+        if (!i.value.trim()) {
+          i.style.border = '2px solid red';
+          todoOK = false;
+        } else {
+          i.style.border = '';
+        }
+      });
+
+      if (todoOK) {
+        alert('Todo OK');
+      }
+
+    })
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- MINI-RETO 11 -->
+<!-- ===================================================== -->
+
+<section>
+  <h2>Mini-reto 11 – Pausar todos los audios excepto el que suena</h2>
+  <audio controls src="audio1.mp3"></audio>
+  <audio controls src="audio2.mp3"></audio>
+  <audio controls src="audio3.mp3"></audio>
+
+  <script>
+    // Mini-reto 11
+    // Cuando un audio suene, pausar los demás.
+    // TU CÓDIGO AQUÍ
+
+    const audios = document.querySelectorAll('audio');
+
+    audios.forEach(audio => {
+      audio.addEventListener('play', () => {
+        audios.forEach(a => {
+          if (a !== audio) {
+            a.pause();
+            a.currentTime = 0; // volver al inicio (opcional)
+          }
+        });
+      });
+    });
+
+  </script>
+</section>
+
+<!-- ===================================================== -->
+<!-- FIN -->
+<!-- ===================================================== -->
+
+</body>
+</html>

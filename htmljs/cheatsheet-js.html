@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Cheat Sheet – JS</title>
+
+  <!-- Highlight.js CSS (tema claro básico) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.5;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .tagline {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: #eee;
+      margin-left: 0.5rem;
+      color: #555;
+    }
+    code {
+      font-family: "Fira Code", Consolas, Menlo, Monaco, "Courier New", monospace;
+    }
+    pre {
+      border-radius: 6px;
+      padding: 0.75rem 0.9rem;
+      background: #1e1e1e;
+      color: #f0f0f0;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    .note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: #e1f5fe;
+      color: #0277bd;
+      margin-right: 0.3rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px dashed #ccc;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>DOM Cheat Sheet – JavaScript</h1>
+<p class="tagline">
+  Patrón clave: <strong>Selecciona → Recorre → Manipula</strong>
+</p>
+
+<section>
+  <h2>1. Seleccionar elementos del DOM</h2>
+
+  <h3>Por ID</h3>
+  <pre><code class="language-js">const elem = document.querySelector('#miId');</code></pre>
+
+  <h3>Por clase</h3>
+  <pre><code class="language-js">const elems = document.querySelectorAll('.miClase');</code></pre>
+
+  <h3>Por etiqueta</h3>
+  <pre><code class="language-js">const inputs = document.querySelectorAll('input');
+const divs   = document.querySelectorAll('div');</code></pre>
+
+  <h3>Por atributo</h3>
+  <pre><code class="language-js">const passwords = document.querySelectorAll('input[type="password"]');</code></pre>
+
+  <h3>Dentro de un contenedor</h3>
+  <pre><code class="language-js">const inputsForm = document.querySelectorAll('#formulario input');</code></pre>
+</section>
+
+<section>
+  <h2>2. Recorrer elementos</h2>
+
+  <span class="pill">NodeList</span>
+  <h3>forEach sobre el resultado de querySelectorAll</h3>
+  <pre><code class="language-js">const elementos = document.querySelectorAll('li');
+
+elementos.forEach(elem =&gt; {
+  console.log(elem);
+});</code></pre>
+
+  <span class="pill">Convertir a Array</span>
+  <h3>Spread operator</h3>
+  <pre><code class="language-js">const elementos = [...document.querySelectorAll('li')];</code></pre>
+</section>
+
+<section>
+  <h2>3. Texto en elementos (div, p, h1…)</h2>
+
+  <h3>Obtener texto</h3>
+  <pre><code class="language-js">const div = document.querySelector('#mensaje');
+console.log(div.textContent);</code></pre>
+
+  <h3>Cambiar texto</h3>
+  <pre><code class="language-js">const div = document.querySelector('#mensaje');
+div.textContent = 'Nuevo texto';</code></pre>
+</section>
+
+<section>
+  <h2>4. Inputs: obtener y usar valores</h2>
+
+  <h3>Input individual</h3>
+  <pre><code class="language-js">const input = document.querySelector('#nombre');
+const valor = input.value;
+console.log(valor);</code></pre>
+
+  <h3>Todos los inputs (recorrer)</h3>
+  <pre><code class="language-js">const inputs = document.querySelectorAll('input');
+
+inputs.forEach(i =&gt; {
+  console.log(i.value);
+});</code></pre>
+</section>
+
+<section>
+  <h2>5. Checkboxes &amp; Radios</h2>
+
+  <h3>Checkboxes marcadas</h3>
+  <pre><code class="language-js">const checks = document.querySelectorAll('input[type="checkbox"]');
+
+checks.forEach(c =&gt; {
+  if (c.checked) {
+    console.log(c.value);
+  }
+});</code></pre>
+
+  <h3>Radio seleccionado</h3>
+  <pre><code class="language-js">const seleccionado = document.querySelector('input[name="grupo"]:checked');
+
+if (seleccionado) {
+  console.log(seleccionado.value);
+}</code></pre>
+</section>
+
+<section>
+  <h2>6. Select / Option</h2>
+
+  <h3>Value seleccionado</h3>
+  <pre><code class="language-js">const select = document.querySelector('#miSelect');
+const valor = select.value;
+console.log(valor);</code></pre>
+
+  <h3>Texto mostrado en la opción seleccionada</h3>
+  <pre><code class="language-js">const select = document.querySelector('#miSelect');
+const texto = select.options[select.selectedIndex].text;
+console.log(texto);</code></pre>
+</section>
+
+<section>
+  <h2>7. Cambiar estilos con JS</h2>
+
+  <pre><code class="language-js">const elem = document.querySelector('#caja');
+
+elem.style.color = 'red';
+elem.style.border = '2px solid blue';
+elem.style.backgroundColor = '#eeeeee';</code></pre>
+  <p class="note">En JS, muchas propiedades CSS con guion pasan a camelCase: <code>background-color</code> → <code>backgroundColor</code>.</p>
+</section>
+
+<section>
+  <h2>8. Audio y multimedia</h2>
+
+  <h3>Pausar un audio</h3>
+  <pre><code class="language-js">const audio = document.querySelector('audio');
+audio.pause();</code></pre>
+
+  <h3>Pausar todos los audios excepto el que suena</h3>
+  <pre><code class="language-js">const audios = document.querySelectorAll('audio');
+
+audios.forEach(audio =&gt; {
+  audio.addEventListener('play', () =&gt; {
+    audios.forEach(a =&gt; {
+      if (a !== audio) {
+        a.pause();
+        a.currentTime = 0; // volver al inicio (opcional)
+      }
+    });
+  });
+});</code></pre>
+</section>
+
+<section>
+  <h2>9. Crear un objeto con los valores del formulario</h2>
+
+  <pre><code class="language-js">const datos = {};
+const inputs = document.querySelectorAll('#formulario input');
+
+inputs.forEach(i =&gt; {
+  // usar el atributo name como clave
+  datos[i.name] = i.value;
+});
+
+console.log(datos);</code></pre>
+</section>
+
+<section>
+  <h2>10. Validar campos vacíos</h2>
+
+  <pre><code class="language-js">const inputs = document.querySelectorAll('#formulario input');
+let todoOK = true;
+
+inputs.forEach(i =&gt; {
+  if (!i.value.trim()) {
+    i.style.border = '2px solid red';
+    todoOK = false;
+  } else {
+    i.style.border = '';
+  }
+});
+
+if (todoOK) {
+  alert('Todo OK');
+}</code></pre>
+</section>
+
+<section>
+  <h2>11. Eventos típicos</h2>
+
+  <pre><code class="language-js">const elem = document.querySelector('#boton');
+
+elem.addEventListener('click', () =&gt; {
+  console.log('Click');
+});
+
+elem.addEventListener('input', () =&gt; {
+  console.log('Valor cambia mientras escribes');
+});
+
+elem.addEventListener('change', () =&gt; {
+  console.log('Valor final cambiado (select, checkbox, etc.)');
+});</code></pre>
+</section>
+
+<section>
+  <h2>12. Patrón general DOM</h2>
+
+  <p class="note">
+    Patrón que se repite en casi todos los ejercicios:
+    <strong>1. Selecciona → 2. Recorre → 3. Manipula</strong>
+  </p>
+
+  <pre><code class="language-js">const elems = document.querySelectorAll('selector');
+
+elems.forEach(e =&gt; {
+  // leer propiedades: e.value, e.textContent, e.checked...
+  // cambiar propiedades: e.textContent = '...', e.style...
+});</code></pre>
+</section>
+
+<!-- Highlight.js core + JS -->
+<script>
+hljs.highlightAll();
+</script>
+
+</body>
+</html>
